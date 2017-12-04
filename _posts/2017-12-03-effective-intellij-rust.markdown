@@ -1,0 +1,138 @@
+---
+layout: post
+title:  "Effective IntelliJ Rust"
+date:   2017-12-04 22:06:19 +0300
+---
+
+Hi! I'd like to share some tips & tricks about using IntelliJ based IDEs and
+especially the [Rust plugin] efficiently. There's a lot of great stuff in 
+IntelliJ platform, and generally things work out of the box, but there are
+lots of small things you don't even realize you need. In this post, I try to
+document features which work for my workflow, they may or may not work for you.
+
+
+[Rust plugin]: https://github.com/intellij-rust/intellij-rust
+
+
+# Quick Start
+
+
+## Install IDE
+
+First, install any IntelliJ based IDE, like IDEA, CLion or PyCharm. I will be 
+using IntelliJ IDEA Community Edition, you can download it from 
+[JetBrains' website][IDEA], or install it via operating system's package manager. 
+Alternatively, you can use [Toolbox App] to conveniently manage different IDEs.
+
+[IDEA]: https://www.jetbrains.com/idea/
+[Toolbox App]: https://www.jetbrains.com/toolbox/app/
+
+
+## A note on keymaps
+
+In the post, I will be using default Linux/Windows keymap, the one for MacOS is
+quite a bit different. Consult [the reference][keymap] to find the differences.
+Note that on Linux, and especially on Ubuntu with default settings, a lot of IDE
+shortcuts will conflict with window manager's shortcuts, so you might want to 
+tweak your config.
+
+
+[keymap]: https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf
+
+
+## Install plugin
+
+The single most important shortcut is <kbd>Ctrl+Shift+A</kbd>, **find action**.
+Using it and typing "plugins" is a convenient way to install Rust plugin:
+
+**VIDEO**
+
+
+# Open a project
+
+We will be using [Cargo] code base as a running example. I already have a cloned
+Cargo repository on my hard drive, so I use **import project** to import it into
+IDEA. The next time I can open the project straight away, without importing it
+again.
+
+**VIDEO**
+
+
+# Navigation
+
+
+## Navigation across project
+
+Code is much more often read then written, so efficient navigation is more
+important  for IDEs then code completion or refactorings support, and IntelliJ
+has awesome navigation facilities. 
+
+The two most important actions for navigation are <kbd>Ctrl+N</kbd> **Goto
+class** and <kbd>Ctrl+Alt+Shift+N</kbd> **Goto symbol**, which also support 
+filtering by module name.
+
+**VIDEO**
+
+There's also <kbd>Ctrl+Shift+N</kbd> for navigation to file. Note that you can
+filter by directory. If you want to find a directory and not a file, append `/` 
+to the query.
+
+
+## Editor tabs
+
+Another vehicle for navigation is editor tabs: you can open several related 
+files and then use mouse to select the tab you want. However, this is horribly
+inefficient, so I recommend to disable tabs altogether:
+
+**VIDEO**
+
+It may be unusual at first, but you'll quickly learn the power of
+<kbd>Ctrl+N</kbd>. Another useful shortcut to replace tabs is <kbd>Ctrl+E</kbd> 
+**Recent Files**.
+
+**VIDEO**
+
+
+## Project structure
+
+One of the most powerful ways to convey application architecture is to use a 
+reasonable directory layout. To toggle the directory tree, there is 
+<kbd>Alt+1</kbd> **Project Structure** shortcut. Traditionally, the tree is on
+the left, but I don't find this very convenient, because closing and opening the
+tree moves the code, and I have to comprimize between tree width and the most
+convenient position of the code. Luckily, this is easy to fix by moving the tree
+to the right.
+
+**VIDEO**
+
+There's a nice option, **Autoscroll from source**, which tracks current position
+in project view. If you like it, you might want to install "Autoscroll save" 
+plugin to make this option persistent.
+
+**VIDEO**
+
+Sometimes you end up with a bunch of tool windows open, but you want to get back
+to the editor. To do so, I save the state with all tool windows closed as a 
+default, and then use **Shift+F12** shortcut.
+
+**VIDEO**
+
+
+## Navigation withing file
+
+When a file does not fit into a single tree, it is useful to be able to find
+out what large blocks are defined in a file and navigate between them. The best
+tool here is <kbd>Alt+7</kbd> **Structure**. Note that it, like most of tree
+controls in IntelliJ, has "speed search": tying a string narrows down the search:
+
+
+**VIDEO**
+
+Some other useful shortcuts are <kbd>Alt+Up/Down</kbd> to navigate between methods,
+<kbd>Ctrl+Shift+M</kbd> to navigate to matching brace <kbd>Ctrl+M</kbd> to recenter
+the editor.
+
+**VIDEO**
+
+
+[Cargo]: https://github.com/rust-lang/cargo
