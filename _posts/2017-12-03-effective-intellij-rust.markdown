@@ -55,17 +55,21 @@ Cargo repository on my hard drive, so I use **import project** to import it into
 IDEA. The next time I can open the project straight away, without importing it
 again.
 
+[Cargo]: https://github.com/rust-lang/cargo
+
+
 **VIDEO**
 
 
 # Navigation
 
 
-## Navigation across project
-
 Code is much more often read then written, so efficient navigation is more
 important  for IDEs then code completion or refactorings support, and IntelliJ
-has awesome navigation facilities. 
+has awesome navigation facilities.
+
+
+## Navigation across project 
 
 The two most important actions for navigation are <kbd>Ctrl+N</kbd> **Goto
 class** and <kbd>Ctrl+Alt+Shift+N</kbd> **Goto symbol**, which also support 
@@ -118,9 +122,9 @@ default, and then use **Shift+F12** shortcut.
 **VIDEO**
 
 
-## Navigation withing file
+## Navigation withing a file
 
-When a file does not fit into a single tree, it is useful to be able to find
+When a file does not fit into a single screen, it is useful to be able to find
 out what large blocks are defined in a file and navigate between them. The best
 tool here is <kbd>Alt+7</kbd> **Structure**. Note that it, like most of tree
 controls in IntelliJ, has "speed search": tying a string narrows down the search:
@@ -135,4 +139,95 @@ the editor.
 **VIDEO**
 
 
-[Cargo]: https://github.com/rust-lang/cargo
+## Navigation from the current context
+
+There's a whole bunch of navigation actions available depending on the 
+surrounding context. The fundamental one is <kbd>Ctrl+B</kbd>, **Go to definition**
+(if the caret is on a reference such as an expression or a type name) **Find references**
+(if the caret is already on the definition).
+
+**VIDEO**
+
+Another interesting one is <kbd>Ctrl+U</kbd> **Go to super method** which in Rust
+brings you to the parent module or to the method definition. 
+
+**VIDEO**
+
+To quickly navigate between types/traits and implementations, there's <kbd>Ctrl+Alt+B</kbd> 
+**Navigate to implementation**.
+
+
+Sometimes, you don't need to change position and just want to lookup docs or
+implementation. For such cases, <kbd>Ctrl+Q</kbd> **Quick Documentation** or 
+<kbd>Ctrl+Shift+I</kbd> **Quick Definition** are ideal.
+
+
+**VIDEO**
+
+
+A super feature of IntelliJ is that context-dependent actions work everywhere. 
+For example, you can peek a definition while looking for symbol by name:
+
+**VIDEO**
+
+
+# Editing code
+
+* extend selection (for navigation)
+
+* multiple selection (more on that later)
+
+* string manipulation
+
+* Surround with quotes
+
+* Join lines
+
+* if, let x = if completions, remove parentheses 
+
+* eprintln!
+
+* swap quotes
+
+* balancing hashes
+
+# Generating code
+
+* extract variable
+
+* postfix template
+
+* implement members
+
+* add impl/derive
+
+* fill match arm
+
+* fill fields
+
+* tuple struct to brace struct
+
+* rename
+
+# Running code
+
+* configuratino from context
+
+* synerghy with nav to symbol
+
+* Run cargo command action
+
+* CLippy
+
+
+# Advanced stuff
+
+* Ace jump
+
+* Emacs is great
+
+* Vim is great
+
+* Homerow computing
+
+* Split editor sucks
